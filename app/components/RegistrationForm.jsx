@@ -1,6 +1,5 @@
 "use client"
 
-import { addRegistration } from "../actions"
 import { useState } from "react"
 
 
@@ -9,20 +8,6 @@ export const RegistrationForm = () => {
     const [isPending, setIsPending] = useState(false)
     const [subscribeSuccess, setSubscribeSuccess] = useState("")
     const [subscribeError, setSubscribeError] = useState("")
-
-
-    const handleRegister = async (e) => {
-        e.preventDefault()
-        setIsPending(true)
-        const formData = new FormData(e.target)
-        const res = await addRegistration(formData)
-        if(res.successMessage) {
-            setSubscribeSuccess(res.successMessage)
-        } else {
-            setSubscribeError(res.errorMessage)
-        }
-        setIsPending(false)
-    }
 
 
     return(
@@ -92,7 +77,7 @@ export const RegistrationForm = () => {
                 </select>
                 </div>
                 <div>
-                <button className="btn btn-lg w-full mt-3 bg-[#5b371a]/80 hover:bg-[#5b371a] text-white" disabled={isPending}>Register</button>
+                <button className="btn btn-lg w-full mt-3 bg-[#5b371a]/80 hover:bg-[#5b371a] text-white" disabled={isPending}>{isPending ? "Processing..." : "Register"}</button>
                 </div>
             </form>
             )}

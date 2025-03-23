@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Adding Form Data to Google Sheet - Tutorial",
-  description: "",
+  description: "A video tutorial on how to add form data to a Google Sheet using Next.js Server Actions and Google Apps Script",
 };
 
 export default function RootLayout({ children }) {
