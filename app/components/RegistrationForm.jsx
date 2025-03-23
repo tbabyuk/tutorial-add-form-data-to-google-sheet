@@ -6,23 +6,23 @@ import { useState } from "react"
 export const RegistrationForm = () => {
 
     const [isPending, setIsPending] = useState(false)
-    const [subscribeSuccess, setSubscribeSuccess] = useState("")
-    const [subscribeError, setSubscribeError] = useState("")
+    const [submitSuccess, setSubmitSuccess] = useState("")
+    const [submitError, setSubmitError] = useState("")
 
 
     return(
         <>
-            {subscribeSuccess && (
+            {submitSuccess && (
                 <div className="w-[90%] max-w-[370px] mx-auto px-8 py-6 space-y-4 rounded-lg text-white bg-[#a59072]/80 ring-2 ring-green-500">
-                    {subscribeSuccess}
+                    {submitSuccess}
                 </div>
             )}
-            {subscribeError && (
+            {submitError && (
                 <div className="w-[90%] max-w-[370px] mx-auto px-8 py-6 space-y-4 rounded-lg text-white bg-[#a59072]/80 ring-2 ring-red-500">
-                    {subscribeError}
+                    {submitError}
                 </div>
             )}
-            {!subscribeSuccess && !subscribeError && (
+            {!submitSuccess && !submitError && (
                 <form 
                 className="w-[90%] max-w-[370px] mx-auto px-8 py-6 space-y-4 rounded-lg text-white bg-[#a59072]/80"
                 onSubmit={(e) => handleRegister(e)}
