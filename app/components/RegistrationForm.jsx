@@ -39,7 +39,7 @@ export const RegistrationForm = () => {
             )}
             {!subscribeSuccess && !subscribeError && (
                 <form 
-                className="w-[90%] max-w-[370px] mx-auto px-8 py-6 space-y-4 rounded-lg text-white bg-[#a59072]/80 ring-2 ring-white/80"
+                className="w-[90%] max-w-[370px] mx-auto px-8 py-6 space-y-4 rounded-lg text-white bg-[#a59072]/80"
                 onSubmit={(e) => handleRegister(e)}
                 >
                 <h2 className="text-center text-2xl font-semibold">Join us for our April 12th Pottery Workshop!</h2>
