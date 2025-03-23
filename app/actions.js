@@ -1,7 +1,7 @@
 "use server"
 
 
-const googleScriptURL = ""
+const googleScriptURL = "your endpoint URL goes here"
 
 
 export const addRegistration = async (formData) => {
