@@ -10,6 +10,20 @@ export const RegistrationForm = () => {
     const [submitError, setSubmitError] = useState("")
 
 
+    const handleRegister = async (e) => {
+        e.preventDefault();
+        setIsPending(true)
+        const formData = new FormData(e.target)
+        const res = await addRegistration(formData)
+        if(res.successMessage) {
+            setSubmitSuccess(res.successMessage)
+        } else {
+            setSubmitError(res.errorMessage)
+        }
+        setIsPending(false)
+    }
+
+
     return(
         <>
             {submitSuccess && (
