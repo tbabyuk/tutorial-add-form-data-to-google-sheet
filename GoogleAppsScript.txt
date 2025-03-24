@@ -1,0 +1,24 @@
+function doPost(e) {
+  const sheet = SpreadsheetApp.getActiveSheet();
+
+  // Check if the request body exists
+  if (e.postData.contents) {
+  const data = JSON.parse(e.postData.contents);
+
+  // Get current timestamp
+  const timestamp = new Date().toLocaleString("en-CA", {month: "short", day: "2-digit", year: "numeric", hour: "2-digit",
+  minute: "2-digit"});
+
+  // Append data to the sheet
+  sheet.appendRow([timestamp, data.event, data.fullName, data.phone, data.email, data.numSpots]);
+
+  // Log the data for debugging
+  Logger.log(data);
+
+  // Return a success message
+  return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT);
+  } else {
+  // If no data is posted, return an error message
+  return ContentService.createTextOutput("No data received").setMimeType(ContentService.MimeType.TEXT);
+  }
+}
