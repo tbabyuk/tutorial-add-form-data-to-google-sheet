@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { addRegistration } from "../actions"
 
 
 export const RegistrationForm = () => {
